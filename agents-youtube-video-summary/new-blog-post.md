@@ -1,0 +1,1 @@
+AI is about machines learning through algorithms. ML uses machine learning on data without prior knowledge, while DL extends ML with deep neural networks. Data Science applies statistical methods to analyze data for insights.

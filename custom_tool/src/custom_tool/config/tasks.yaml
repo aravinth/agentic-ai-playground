@@ -1,0 +1,31 @@
+extract_content_task:
+  description: >
+    Fetch the PDF document from the URL: '{lesson_url}'.
+    Use the Web PDF Reader Tool to extract all the text content.
+    Handle potential errors during download or extraction gracefully.
+  expected_output: >
+    The complete extracted text content of the PDF. If an error occurs,
+    provide a clear error message.
+  agent: pdf_content_extractor
+
+generate_questions_task:
+  description: >
+    Analyze the following text extracted from a lesson PDF. Based *only* on this text, 
+    generate a list of 5-10 insightful questions that cover the main topics, concepts, 
+    and key information presented. Focus on questions that encourage understanding and explanation.
+  expected_output: >
+     A numbered list of 5 to 10 questions formulated strictly from the provided text content.
+     Example:
+     1. What is the main topic discussed in section X?
+     2. Explain the process of Y as described in the text.
+  agent: question_generator
+
+generate_answers_task:
+  description: >
+     You are given a list of questions and the original text content from a lesson PDF.
+     For each question, provide a concise and accurate answer based solely on the information available in the text content.
+     Do not use any external knowledge. Ensure each answer directly addresses the corresponding question using only the provided text.
+  expected_output: >
+    The complete extracted text content of the PDF. If an error occurs,
+    provide a clear error message.
+  agent: answer_generator
